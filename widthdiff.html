@@ -1,0 +1,30 @@
+<head>
+    <link rel="shortcut icon" href="#" />
+    <script>
+
+let devtools_open = false;
+
+setInterval( () => {
+    if ((window.outerHeight - window.innerHeight) > 320) {
+    devtools_open = true;
+    document.write("OPEN");
+  }
+
+  if ((window.outerWidth - window.innerWidth) > 320) {
+    devtools_open = true;
+    document.write("OPEN");
+  }
+}, 50);
+    </script>
+	</head>
+	<body>
+            <h1>WidthDiff</h1>
+            <p><b>Description:</b>
+            Detects DevTools based on difference in width or height
+  </body>
+
+
+
+
+
+

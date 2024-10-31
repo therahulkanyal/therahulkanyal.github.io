@@ -1,0 +1,25 @@
+
+<head>
+    <link rel="shortcut icon" href="#" />
+    <script>
+
+window.addEventListener('keydown', function(event){ 
+    console.log(event);
+    if (event.key == "F12" || ((event.ctrlKey || event.altKey) && (event.code == "KeyI" || event.key == "KeyJ" || event.key == "KeyU"))) {
+        event.preventDefault(); 
+        return false;
+    }
+});
+window.addEventListener('contextmenu', function(event){ 
+    event.preventDefault();
+    return false;
+});
+
+    </script>
+	</head>
+	<body>
+            <h1>ConClear</h1>
+            <p><b>Description:</b>
+            Constantly Clear DevTools Pane
+  </body>
+
