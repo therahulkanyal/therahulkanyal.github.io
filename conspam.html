@@ -3,23 +3,24 @@
     <link rel="shortcut icon" href="#" />
     <script>
 
-var baseline = 100;
-function measure() {
-    const start = performance.now();
-    for (let i = 0; i < 100000; i++) {
-        console.clear();
-    }
-    const time = performance.now() - start;
-    console.log(time)
-    if (time > baseline) {
-         document.body.innerHTML = "<h1>OPEN</h1>"
-    }
-    else{
-        document.body.innerHTML = "<h1>CLOSED</h1>"
-    }
-    setTimeout(measure, 1000);
-}
-measure();
+document.addEventListener("DOMContentLoaded", function() {
+            var baseline = 100;
+            function measure() {
+                const start = performance.now();
+                for (let i = 0; i < 100000; i++) {
+                    console.clear();
+                }
+                const time = performance.now() - start;
+                console.log(time);
+                if (time > baseline) {
+                    document.body.innerHTML = "<h1>OPEN</h1>";
+                } else {
+                    document.body.innerHTML = "<h1>CLOSED</h1>";
+                }
+                setTimeout(measure, 1000);
+            }
+            measure();
+        });
     </script>
 	</head>
 	<body>

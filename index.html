@@ -1,5 +1,39 @@
 <head>
     <link rel="shortcut icon" href="#" />
+    <script>
+ 
+        function isPrime(num) {
+            if (num <= 1) return false;
+            if (num <= 3) return true;
+            if (num % 2 === 0 || num % 3 === 0) return false;
+            for (let i = 5; i * i <= num; i += 6) {
+                if (num % i === 0 || num % (i + 2) === 0) return false;
+            }
+            return true;
+        }
+
+
+        function printNextPrime() {
+            let currentNumber = 2; 
+
+
+            const primeDiv = document.createElement("div");
+            primeDiv.id = "primeDisplay";
+            document.body.appendChild(primeDiv);
+
+    
+            setInterval(() => {
+                while (!isPrime(currentNumber)) {
+                    currentNumber++;
+                }
+                primeDiv.textContent = "Prime: " + currentNumber; 
+                currentNumber++; 
+            }, 500);
+        }
+
+
+        document.addEventListener("DOMContentLoaded", printNextPrime);
+    </script>
 </head>
 <h1> Anti-Debugging </h1>
 <a href="conclear.html">Conclear</a> <br>
