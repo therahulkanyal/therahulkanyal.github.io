@@ -17,8 +17,6 @@ if (window.Worker) {
 
     // Listen for messages from the worker
     myWorker.onmessage = function (event) {
-        // let element = document.getElementById("devtools_status");
-        // element.textContent = event.data;
         document.body.innerHTML = event.data;
     };
 
