@@ -11,7 +11,10 @@ addEventListener("load", () => {
         debugger;
         const time = performance.now() - start;
         if (time > threshold) {
-            document.write("<p>DevTools were open since page load</p>");
+            document.body.innerHTML = "<h1>OPEN</h1>";
+        }
+        else{
+            document.body.innerHTML = "<h1>CLOSED</h1>";
         }
     }
     setInterval(measure, 300);
