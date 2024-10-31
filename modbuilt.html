@@ -1,0 +1,19 @@
+
+<head>
+    <link rel="shortcut icon" href="#" />
+    <script>
+
+let originalLog = console.log;
+console.log = function(arg) {
+    arg = arg.replace("enc_key", "fake_key");
+    originalLog(arg);
+}
+
+    </script>
+	</head>
+	<body>
+            <h1>ModBuilt</h1>
+            <p><b>Description:</b>
+            Modifies Console.log (ENC)
+  </body>
+
