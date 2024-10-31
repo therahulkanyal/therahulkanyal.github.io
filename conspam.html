@@ -7,14 +7,15 @@ var baseline = 100;
 function measure() {
     const start = performance.now();
     for (let i = 0; i < 100000; i++) {
-        // console.log("anti-debug");
         console.clear();
     }
     const time = performance.now() - start;
     console.log(time)
     if (time > baseline) {
-        document.write("DevTools were opened");
-        // return;
+         document.body.innerHTML = "<h1>OPEN</h1>"
+    }
+    else{
+        document.body.innerHTML = "<h1>CLOSED</h1>"
     }
     setTimeout(measure, 1000);
 }
