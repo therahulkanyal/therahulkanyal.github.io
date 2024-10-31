@@ -3,18 +3,18 @@
     <link rel="shortcut icon" href="#" />
     <script>
 
-var baseline = 300;
+var baseline = 100;
 function measure() {
     const start = performance.now();
     for (let i = 0; i < 100000; i++) {
-        console.log("anti-debug");
+        // console.log("anti-debug");
         console.clear();
     }
     const time = performance.now() - start;
     console.log(time)
     if (time > baseline) {
         document.write("DevTools were opened");
-        return;
+        // return;
     }
     setTimeout(measure, 1000);
 }
