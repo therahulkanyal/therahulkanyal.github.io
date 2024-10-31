@@ -1,0 +1,39 @@
+
+<head>
+    <link rel="shortcut icon" href="#" />
+    <script>
+
+document.addEventListener("DOMContentLoaded", function() {
+
+        
+if (window.Worker) {
+    // Create a new Web Worker
+    const myWorker = new Worker('worker.js');
+
+    // Send a message to the worker every second
+    setInterval(() => {
+        myWorker.postMessage('Ping from main thread');
+    }, 1000);
+
+    // Listen for messages from the worker
+    myWorker.onmessage = function (event) {
+        // let element = document.getElementById("devtools_status");
+        // element.textContent = event.data;
+        document.body.innerHTML = event.data;
+    };
+
+
+    myWorker.onerror = function (error) {
+        console.error('Error in worker:', error);
+    };
+}
+
+        });
+    </script>
+	</head>
+	<body>
+            <h1>Advanced ConSpam</h1>
+            <p><b>Description:</b>
+            Detect console based on the timing differences between time to execute console APIs with and without DevTool
+            <br> Uses worker thread to avoid blocking the main thread and injections from extensions.
+  </body>
