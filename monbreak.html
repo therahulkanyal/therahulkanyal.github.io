@@ -1,0 +1,26 @@
+
+
+<head>
+    <link rel="shortcut icon" href="#" />
+    <script>
+
+addEventListener("load", () => {
+    var threshold = 500;
+    const measure = () => {
+        const start = performance.now();
+        debugger;
+        const time = performance.now() - start;
+        if (time > threshold) {
+            document.write("<p>DevTools were open since page load</p>");
+        }
+    }
+    setInterval(measure, 300);
+});
+
+    </script>
+	</head>
+	<body>
+            <h1>ConClear</h1>
+            <p><b>Description:</b>
+            Constantly Clear DevTools Pane
+  </body>
